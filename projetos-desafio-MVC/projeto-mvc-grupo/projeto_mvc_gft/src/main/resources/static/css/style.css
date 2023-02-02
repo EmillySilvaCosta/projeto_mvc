@@ -1,0 +1,44 @@
+#logo{
+	font-size: 30px;
+	margin-bottom: 20%;
+}
+
+a{
+	color: black!important;
+	font-size: 21px;
+}
+
+.teste:hover{
+	background-color: #808080;
+	font-size: 25px;
+}
+
+#heart{
+	color: red;
+}
+
+h1{
+	font-family: sans-serif;
+}
+
+.list-group{
+	max-height: 300px;
+    overflow:scroll;
+}
+
+#user{
+	font-size: 200%;
+	padding-right: 0!important;
+}
+#user:hover{
+	color: purple;
+}
+h5{
+	color: purple;
+}
+#cabecao{
+	font-size: 25px;
+}
+#logout_btn:hover{
+	color: purple!important;
+}

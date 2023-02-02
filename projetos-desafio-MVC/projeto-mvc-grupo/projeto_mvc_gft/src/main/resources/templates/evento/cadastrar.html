@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout.html}">
+<meta charset="UTF-8">
+<div layout:fragment="content">
+    <div class="alert alert-primary" th:if="${mensagem!=null}" th:text="${mensagem}"></div>
+    <div>
+        <div class="m-3">
+		<h1 class="text-light">Novo Evento</h1>
+		<hr>
+	</div>
+        <div class = "container">
+            <form method="post" th:object="${evento}" th:action="@{/evento/novo}">
+                <input type="hidden" th:field="*{id_evento}"></input>
+        <div class = "row">
+                <div class="form-group mb-3 col-12">
+                    <label for="nome" class="text-light mb-1">Nome</label>
+                    <input class="form-control" type="text" th:field="*{nome}" required></input>
+                    <div class="text-danger" th:if="${#fields.hasErrors('nome')}" th:errors="*nome"></div>
+                </div>
+                <div class="form-group mb-3 col-2">
+                    <label for="dataInicio" class="text-light mb-1">Data de Início</label>
+                    <input class="form-control" type="date" th:field="*{dataInicio}"></input>
+                    <div class="text-danger" th:if="${#fields.hasErrors('dataInicio')}" th:errors="*dataInicio"></div>
+                </div>
+                <div class="form-group mb-3 col-2">
+                    <label for="dataFinal" class="text-light mb-1">Data Final</label>
+                    <input class="form-control" type="date" th:field="*{dataFinal}"></input>
+                    <div class="text-danger" th:if="${#fields.hasErrors('dataFinal')}" th:errors="*dataFinal"></div>
+                </div>
+                <div class="form-group mb-3 col-2">
+                    <!--<label for="status" class="text-light mb-1 mr-3">Ativo?</label>-->
+                    <div class="form-check mt-4">
+                        <input class="form-check-input align-middle" type="checkbox" th:field="*{status}" value="" id="flexCheckChecked" checked>
+                        <label class="form-check-label" for="flexCheckChecked">Disponível</label>
+                    </div>
+                </div>
+                 <div class="btn-group">
+				<div class="col-3">
+					<a href="/evento" class="btn btn-danger text-light mt-4"
+						role="button">Cancelar</a>
+					<button type="submit" class="btn btn-success text-light mt-4">
+						<i class="fa-solid fa-floppy-disk "></i> Salvar
+					</button>
+					</div>
+				</div>
+            </form>
+        </div>    
+    </div>
+</div>
+</html>

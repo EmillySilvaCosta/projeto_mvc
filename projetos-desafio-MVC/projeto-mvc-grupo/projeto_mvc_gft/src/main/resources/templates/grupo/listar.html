@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+xmlns:layout="http://www.altraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout.html}">
+<meta charset="UTF-8">
+<div layout:fragment="content">
+    <div class=" m-3">
+        <h1 class="text-light">Grupos</h1>
+        <hr>
+    </div>
+      <div class="alert alert-primary" th:if="${#lists.isEmpty(lista)}">
+        Nenhum grupo cadastrado.
+      </div>
+    <div class="alert alert-primary" th:if="${mensagem!=null}" th:text="${mensagem}">
+       
+    </div>
+    <div>
+        <div class="card-body mt-0">
+            <form method="get" class="d-flex">
+                <input class="form-control me-2 type="text" name="nome" th:value="${nome}"" type="search" placeholder="Pesquisar evento por nome..." aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+    <div th:if="${not #lists.isEmpty(lista)}" class="list-group m-3">
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-light">
+                    <th>Id</th>
+                    <th>Nome</th>
+                    <th>Quantidade de integrantes</th>
+                    <th>Status</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="grupo : ${lista}" class="text-light">
+                    <td th:text="${grupo.id_grupo}"></td>
+                    <td th:text="${grupo.nome}"></td>
+                    <td th:text="${grupo.numIntegrantes}"></td>
+                    <td th:text="${grupo.status ? 'Disponível' : 'Indisponível'}"></td>
+                    <td>
+                        <a class="btn btn-warning btn-small text-light" th:href="@{/grupo/visualizar(id=${grupo.id_grupo})}"><i class="bi bi-eye"></i></a>
+                        <a class="btn btn-danger btn-small text-light" th:href="@{/grupo/excluir(id=${grupo.id_grupo})}"><i class="bi bi-trash"></i></a>
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-success text-light m-3" th:href="@{/grupo/novo}">Novo Grupo</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</div>
+</html>
