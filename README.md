@@ -2,12 +2,8 @@
 
 Desafio de MVC com JAVA e Spring Boot do Grupo GFT!
 
-## Integrantes 👥
-- Alessandra Damaris Suzy Silva Moreira Cruz
-- Elida Emilly Costa
-- Isabella Alves Suto
-- Jéssica Marques Nagata
-- Julia Rodrigues Gubolin
+## Autora 👥
+- Elida Emilly Silva Costa
 
 ## Funcionalidades 🔧
 
