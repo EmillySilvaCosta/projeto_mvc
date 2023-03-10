@@ -24,9 +24,6 @@ A aplicação é capaz de:
 ## Tela de ranking
 - É apenas visual, não apresenta dados!!
 
-## Figma
-- [GFT MIlhas](https://www.figma.com/file/GINfv81cq9IdIjUjOCiied/MVC---GRUPO-1?node-id=0%3A1)
-
 ## Projetos
 - Enviamos um projeto total, o que DE FATO é a entrega: projeto_mvc_grupo 
 - Enviamos um projeto não finalizado com algumas partes a mais: projeto-nao-finalizado, apenas para visualização de até onde chegamos
